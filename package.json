@@ -1,0 +1,29 @@
+{
+  "name": "koa-log-req-on-err",
+  "version": "1.0.0",
+  "description": "When an error occurs, log request details.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtdd2l/koa-log-req-on-err.git"
+  },
+  "keywords": [
+    "postgresql",
+    "pgsql",
+    "pg",
+    "http",
+    "errors"
+  ],
+  "authors": "Derek Doyle <derekthomisdoyle@gmail.com> and Doug Moscrop <doug.moscrop@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/dtdd2l/koa-log-req-on-err#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^1.6.0"
+  }
+}
