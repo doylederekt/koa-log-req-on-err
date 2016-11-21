@@ -5,12 +5,12 @@ module.exports = function() {
     try {
       yield* next;
     } catch (err) {
-      console.log('koa-pg-error: this.req.headers[\'x-platform\'] = ' + this.req.headers['x-platform']);
-      console.log('koa-pg-error: this.req.headers.authorization = ' + this.req.headers.authorization);
-      console.log('koa-pg-error: this.request.method = ' + this.request.method);
-      console.log('koa-pg-error: this.request.path = ' + this.request.path);
-      console.log('koa-pg-error: this.request.query = ' + util.inspect(this.request.query));
-      console.log('koa-pg-error: this.request.body = ' + util.inspect(this.request.body));
+      console.log('koa-log-req-on-error: this.req.headers[\'x-platform\'] = ' + this.req.headers['x-platform']);
+      console.log('koa-log-req-on-error: this.req.headers.authorization = ' + this.req.headers.authorization);
+      console.log('koa-log-req-on-error: this.request.method = ' + this.request.method);
+      console.log('koa-log-req-on-error: this.request.path = ' + this.request.path);
+      console.log('koa-log-req-on-error: this.request.query = ' + util.inspect(this.request.query));
+      console.log('koa-log-req-on-error: this.request.body = ' + util.inspect(this.request.body));
 
       throw err;
     }
