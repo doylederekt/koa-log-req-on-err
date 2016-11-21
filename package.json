@@ -1,6 +1,6 @@
 {
   "name": "koa-log-req-on-err",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "When an error occurs, log request details.",
   "main": "index.js",
   "scripts": {
