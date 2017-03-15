@@ -1,16 +1,21 @@
-var util = require('util');
-
-module.exports = function() {
+module.exports = function(logger) {
   return function* (next) {
+    if (typeof logger === 'function') {
+      logger = logger(this);
+    } else {
+      logger = logger || console;
+    }
     try {
       yield* next;
     } catch (err) {
-      console.log('koa-log-req-on-error: this.req.headers[\'x-platform\'] = ' + this.req.headers['x-platform']);
-      console.log('koa-log-req-on-error: this.req.headers.authorization = ' + this.req.headers.authorization);
-      console.log('koa-log-req-on-error: this.request.method = ' + this.request.method);
-      console.log('koa-log-req-on-error: this.request.path = ' + this.request.path);
-      console.log('koa-log-req-on-error: this.request.query = ' + util.inspect(this.request.query));
-      console.log('koa-log-req-on-error: this.request.body = ' + util.inspect(this.request.body));
+      const requestDebugInfo = {
+        auth: this.headers.authorization,
+        requestMethod: this.request.method,
+        requestPath: this.request.path,
+        requestQuery: this.request.query,
+        requestBody: this.request.body
+      };
+      logger.error({ requestDebugInfo, err }, 'koa-log-req-on-error: request encountered an error');
 
       throw err;
     }
