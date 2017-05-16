@@ -15,7 +15,11 @@ module.exports = function(logger) {
         requestQuery: this.request.query,
         requestBody: this.request.body
       };
-      logger.error({ requestDebugInfo, err }, 'koa-log-req-on-error: request encountered an error');
+      if (this.status < 500) {
+        logger.info({ requestDebugInfo, err }, 'koa-log-req-on-error: request encountered an error');
+      } else {
+        logger.error({ requestDebugInfo, err }, 'koa-log-req-on-error: request encountered an error');
+      }
 
       throw err;
     }

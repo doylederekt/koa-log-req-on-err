@@ -1,6 +1,6 @@
 {
   "name": "koa-log-req-on-err",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "When an error occurs, log request details.",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,6 @@
     "url": "git+https://github.com/dtdd2l/koa-log-req-on-err.git"
   },
   "keywords": [
-    "postgresql",
-    "pgsql",
-    "pg",
     "http",
     "errors"
   ],
@@ -24,6 +21,6 @@
   "dependencies": {
   },
   "devDependencies": {
-    "eslint": "^1.6.0"
+    "eslint": "^3.19.0"
   }
 }

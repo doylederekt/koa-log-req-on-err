@@ -2,6 +2,8 @@
 
 Log request details upon error.  This includes X-Platform header, Authorization header, method, path, query, and body.
 
+400 level errors are logged at the info level, while 500 level errors are logged at the error level.
+
 ## usage
 
 ```javascript
